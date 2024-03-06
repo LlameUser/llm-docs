@@ -78,10 +78,11 @@ teleprompter = BootstrapFewShot(metric=validate_context_and_answer)
 compiled_rag = teleprompter.compile(RAG(), trainset=trainset)
 ```
 Currently, there are 9 Different Teleprompters:
+
 * `LabeledFewShot` (For Adding your own few shot examples)
 * `BootStrapFewShot` (For auto-generating few shot examples)
 * `BootStrapFewShotWithRandomSearch` 
-* `BootStrapFewShotWithOptuna`
+* `BootStrapFewShotWithOptuna` (Implements Bayesian Optimization)
 * `SignatureOptimizer`
 * `BayesianSignatureOptimizer`
 * `BootstrapFinetune`

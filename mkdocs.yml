@@ -41,6 +41,9 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.mark
   - attr_list
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 copyright: |
   &copy; 2024 Antoine Angert
