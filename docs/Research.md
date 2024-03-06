@@ -68,6 +68,26 @@ class RAG(dspy.Module):
 ```
 The `dspy.ChainOfThought(GenerateAnswer)` will add a Chain-of-Thougth prompt automatically during compilation, signigfically improving the quality
 
+To compile the created modules, there are different so called `teleprompters`. They each improve the prompt in a unique way, adding flexibility to the system. Here is an example of a compilation with a BootStrapFewShot teleprompter, which adds FewShot examples via an LLM:
+```python
+from dspy.teleprompt import BootstrapFewShot
+# Set up a basic teleprompter, which will compile our RAG program.
+teleprompter = BootstrapFewShot(metric=validate_context_and_answer)
+
+# Compile!
+compiled_rag = teleprompter.compile(RAG(), trainset=trainset)
+```
+Currently, there are 9 Different Teleprompters:
+* `LabeledFewShot` (For Adding your own few shot examples)
+* `BootStrapFewShot` (For auto-generating few shot examples)
+* `BootStrapFewShotWithRandomSearch` 
+* `BootStrapFewShotWithOptuna`
+* `SignatureOptimizer`
+* `BayesianSignatureOptimizer`
+* `BootstrapFinetune`
+* `KNNFewShot`
+* `Ensemble`
+
 #### Implementation and Usefullnes to us
 As this is a whole framework, this would dictate the way we would use LLMs in the future. But this framework is very powerful and promising. It is on the other hand quite complex and needs a lot of getting into, especially when using it's wide feature set. Seeing the performance that this framework can deliver even on very complex tasks, I think that it's worth looking into.
 
