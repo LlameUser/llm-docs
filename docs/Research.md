@@ -36,7 +36,7 @@ Framework for "Programming" with LLMs
 Source: [DSPy](https://dspy-docs.vercel.app/)
 
 #### TL;DR
-DSPy provides pre-written modules to create tasks like **Chain-of-Thought** or **Question-Answering**. One of their big advantages is that one can add depth to a program with a very similar syntax to Pytorch. Instead of having one prompt to do a whole task, a task can be divided into smaller tasks to provide better results, plus certain classes can be reused for similar tasks. The main advantage of DSPy though is what they call their compiler. Once you have finished building your pipeline, it can be compiled with DSPy. Internally, this will build and improve the prompt to achieve better results. Also, it is then possible to create short, generic prompts and not needing to write a specific prompt for every usecase:
+DSPy provides pre-written modules to create tasks like **Chain-of-Thought** or **Question-Answering**. One of their big advantages is that one can add depth to a program with a very similar to Layers in PyTorch (It also uses syntax inspired by PyTorch). Instead of having one prompt to do a whole task, a task can be divided into smaller tasks to provide better results, plus certain classes can be reused for similar tasks. The main advantage of DSPy though is what they call their compiler. Once you have finished building your pipeline, it can be compiled with DSPy. Internally, this will build and improve the prompt to achieve better results. Also, it is then possible to create short, generic prompts and not needing to write a specific prompt for every usecase:
 ```python
 class BasicQA(dspy.Signature):
     """Answer questions with short factoid answers."""
